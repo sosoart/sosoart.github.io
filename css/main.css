@@ -91,49 +91,149 @@ textarea {
     padding: 0.2em 0;
 }
 
+/* ----headers---- */
+h2, h3 {
+    /*background:url(../images/nav_bg.png) no-repeat bottom center;*/
+    font-family: "LeagueGothicRegular", Arial, Helvetica, sans-serif;
+    text-transform: uppercase;
+    color: #575757;
+    margin-bottom: 20px;
+}
+
+h2 {
+    font-size: 72px;
+    line-height: 80px;
+}
+
+h3 {
+    font-size: 40px;
+    line-height: 45px;
+}
+
+h4 {
+    font-size: 32px;
+    font-weight: 300;
+    color: #555555;
+}
+
+hr{
+    width: 10%;
+}
+
+
 /* ==========================================================================
    Author's custom styles
    ========================================================================== */
-.container{
-    max-width: 960px;
+.navigation {
+    list-style: none;
     margin: 0 auto;
+    width: 60%;
+
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+
+    -webkit-flex-flow: row wrap;
+    justify-content: flex-end;
+}
+
+.navigation a {
+    text-decoration: none;
+    display: block;
+    padding: 1em;
+    color: black;
+}
+
+@media all and (max-width: 800px) {
+    .navigation {
+        justify-content: space-around;
+    }
+}
+
+@media all and (max-width: 600px) {
+    .navigation {
+        -webkit-flex-flow: column wrap;
+        flex-flow: column wrap;
+        padding: 0;
+    }
+
+    .navigation a {
+        text-align: center;
+        padding: 10px;
+        border-top: 1px solid rgba(255, 255, 255, 0.3);
+        border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    }
+
+    .navigation li:last-of-type a {
+        border-bottom: none;
+    }
+}
+
+.container {
+    margin: 0 auto;
+    max-width: 980px;
+    text-align: left;
     font-family: 'Open Sans', sans-serif;
+    color: #888888;
+
 }
 
-
-.header {
-    margin: 150px 0;
-    text-align: center;
-}
-
-.title {
-   font-size: 30px;
-   font-weight: 700;
-}
-
-.subtitle {
-    font-size: 18px;
+.title{
+    font-size: 44px;
     font-weight: 300;
+    color: #888888;
 }
 
-.item .item-header .item-time {
-    font-size: 24px;
-    font-weight: 500;
+.flex_container {
+    display: flex;
+    flex-wrap: wrap;
 }
 
-.item .item-header .item-title {
-    font-size: 24px;
-    font-weight: 500;
+.flex_item {
+    flex: 1 0 25%;
+    padding: 44px;
+
 }
 
-.image-text {
-    font-size: 14px;
-    font-weight: 200;
-    text-align: center;
+.gray {
+    background-color: #ecf0f1;
 }
 
+.time {
+    text-align: right;
+    margin-top: -4%;
+}
 
+.likes{
+    margin-top: 10%;
+}
 
+.red{
+    color: red;
+}
+
+.footer {
+    max-width: 980px;
+    height: auto;
+    margin: 0 auto;
+    background-color: #ecf0f1;
+    text-align: left;
+    line-height: 100px;
+    padding-left: 5%;
+}
+.span{
+    display: inline-block;
+    color: #888888;
+    vertical-align: middle;
+    line-height: normal;
+}
+
+br{
+    margin: 1px 0;
+    line-height:22px;
+}
 
 
 /* ==========================================================================
@@ -221,9 +321,9 @@ textarea {
 }
 
 @media print,
-       (-webkit-min-device-pixel-ratio: 1.25),
-       (min-resolution: 1.25dppx),
-       (min-resolution: 120dpi) {
+(-webkit-min-device-pixel-ratio: 1.25),
+(min-resolution: 1.25dppx),
+(min-resolution: 120dpi) {
     /* Style adjustments for high resolution devices */
 }
 
@@ -238,8 +338,9 @@ textarea {
     *:before,
     *:after {
         background: transparent !important;
-        color: #000 !important; /* Black prints faster:
-                                   http://www.sanbeiji.com/archives/953 */
+        color: #000 !important;
+        /* Black prints faster:
+                                          http://www.sanbeiji.com/archives/953 */
         box-shadow: none !important;
         text-shadow: none !important;
     }
@@ -261,7 +362,6 @@ textarea {
      * Don't show links that are fragment identifiers,
      * or use the `javascript:` pseudo protocol
      */
-
     a[href^="#"]:after,
     a[href^="javascript:"]:after {
         content: "";
@@ -277,7 +377,6 @@ textarea {
      * Printing Tables:
      * http://css-discuss.incutio.com/wiki/Printing_Tables
      */
-
     thead {
         display: table-header-group;
     }
@@ -291,15 +390,4 @@ textarea {
         max-width: 100% !important;
     }
 
-    p,
-    h2,
-    h3 {
-        orphans: 3;
-        widows: 3;
-    }
-
-    h2,
-    h3 {
-        page-break-after: avoid;
-    }
 }
