@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <style>
+        ::selection {
+            background-color: green;
+            color: white;
+        }
+
+        a {
+            top: 50px;
+            position: relative;
+            margin: 20px;
+            padding: 5px;
+            color: red;
+            text-decoration: none;
+            border: 1px solid black;
+            border-radius: 3px;
+            box-shadow: 1px 2px 3px rgba(0, 0, 0, 0.3);
+        }
+
+        a .box {
+            visibility: hidden;
+        }
+
+        a:hover {
+            background-color: green;
+        }
+
+        a:hover .box {
+            visibility: visible;
+        }
+
+        a:active {
+            background-color: blue;
+        }
+    </style>
+</head>
+<body>
+asdfasdfasdfasdfasdfasfd
+<a href="http://wanted.co.kr">
+    wanted!
+    <span class="box">
+        show!
+    </span>
+</a>
+</body>
+</html>

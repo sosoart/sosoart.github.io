@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Float Layout</title>
+
+    <style>
+        .container {
+            margin: 0 auto;
+            max-width: 960px;
+        }
+
+        .block {
+            height: 100px;
+            background: red;
+            border: 1px solid gray;
+        }
+
+        .float {
+            float: left;
+            width: 50%;
+            height: 100px;
+            background: blue;
+            border: 1px solid green;
+            box-sizing: border-box;
+        }
+
+        .clearfix {
+            overflow: auto;
+            zoom: 1;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="block"></div>
+    <div class="clearfix">
+        <div class="float"></div>
+        <div class="float"></div>
+    </div>
+    <div class="block"></div>
+</div>
+</body>
+</html>
